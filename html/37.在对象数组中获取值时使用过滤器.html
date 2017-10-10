@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在对象获取值时使用自定义服务</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>在获取数组 [255, 251, 200] 值时使用过滤器:</p>
+        <ul>
+            <li ng-repeat="x in counts">
+                {{x | myFilter}}
+            </li>
+        </ul>
+        <p>过滤器使用自定义服务将数字转换为十六进制</p>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.service("test",function () {
+            this.myFunc=function (x) {
+                return x.toString(16)
+            }
+        });
+        app.filter("myFilter",["test",function (test) {
+            return function (x) {
+                return test.myFunc(x)
+            }
+        }]);
+        app.controller('myCtrl', function($scope){
+            $scope.counts = [255, 251, 200];
+        });
+    </script>
+</body>
+</html>

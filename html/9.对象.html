@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS对象</title>
+</head>
+<body>
+    <div ng-app="" ng-init="person={name:'Wangrui',age:'18'}">
+        <p>姓名是：{{person.name}}</p>
+        <p ng-bind="person.name"></p>       //对象来说，只能用双引号包裹，双括号无效
+    </div>
+    <script src="../js/angular.min.js"></script>
+</body>
+</html>

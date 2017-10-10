@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS应用大结局</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl" style="background: yellowgreen;border: 1px solid #000;width:500px;padding-left: 10px;">
+        <h1>我的笔记</h1>
+        <textarea ng-model="message" cols="40" rows="10"></textarea><br/>
+        <button ng-click="save()">保存</button>
+        <button ng-click="clear()">清除</button>
+        <p>剩余字数：<span ng-bind="left()"></span></p>
+    </div>
+    <script src="../js/myNoteApp.js"></script>
+    <script src="../js/myNoteCtrl.js"></script>
+</body>
+</html>

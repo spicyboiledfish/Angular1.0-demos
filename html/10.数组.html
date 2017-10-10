@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngulaJS数组</title>
+</head>
+<body>
+    <div ng-app="" ng-init="points=[1,2,3,4,5]">
+        <p>分数是：{{points[2]}}</p>
+        <p ng-bind="points[2]"></p>
+        <p ng-bind={{points[2]}}></p>
+    </div>
+    <script src="../js/angular.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>currency过滤器</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        价格：<input ng-model="price" />
+        数量：<input ng-model="number" />
+        <p>总价：{{ (price*number)| currency}}</p>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope) {
+            $scope.price="9.99";
+            $scope.number="1";
+        });
+    </script>
+</body>
+</html>

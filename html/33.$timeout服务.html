@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$timeout</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl" ng-init="myHeader='你好'">
+        <p>过两秒后显示的信息</p>
+        <div>{{myHeader}}</div>
+        <p>$timeout 访问在规定的毫秒数后执行指定函数。</p>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope,$timeout) {
+            //$scope.myHeader="Hello World!";  用ng-init的方式或者用在script中$scope.myHeader写也是一样可以运行成功
+            $timeout(function () {
+                $scope.myHeader="How are you?"
+            },2000);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>包含AngularJS代码</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <div ng-include="'site.html'"></div>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope,$http) {
+            $http.get('../php/customer.php').then(function (response) {
+                $scope.names=response.data.sites;
+
+            })
+        })
+    </script>
+    <p>AngularJS 代码包含在 "site.html" 文件中。</p>
+</body>
+</html>

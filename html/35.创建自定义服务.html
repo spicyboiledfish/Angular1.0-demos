@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建自定义服务</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>将一个数字转化为十六进制</p>
+        <div>{{number}}</div>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.service("test",function () {
+            this.myFunc=function (x) {
+                return x.toString(16)
+            }
+        });
+        app.controller("myCtrl",function ($scope,test) {
+            $scope.number=test.myFunc(255)
+        })
+    </script>
+</body>
+</html>

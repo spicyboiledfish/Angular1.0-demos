@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS控制器</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        名：<input ng-model="lastName" />
+        姓：<input ng-model="firstName" />
+        <p>姓名是：{{lastName}} {{firstName}}</p>
+        <p>姓名是：{{lastName+" "+firstName}}</p>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope) {
+            $scope.lastName="Harry";
+            $scope.firstName="Alice";
+        })
+    </script>
+</body>
+</html>

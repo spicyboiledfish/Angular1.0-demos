@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>应用状态</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <form ng-app="" name="myForm" ng-init="myText='test@test.com'">   <!--默认让myText这个变量的值为test@test.com-->
+        Email:
+        <input type="email" name="myAddress" ng-model="myText" required />
+        <p>状态</p>
+        <p>valid:{{myForm.myAddress.$valid}}(如果输入的值是合法的则为true)</p>
+        <p>dirty:{{myForm.myAddress.$dirty}}(如果值改变则为true)</p>
+        <p>touched:{{myForm.myAddress.$touched}}(如果通过触屏点击则为true)</p>
+    </form>
+</body>
+</html>

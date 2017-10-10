@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨域包含</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-include=" 'http://c.runoob.com/runoobtest/angular_include.php' "></div>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.config(function ($sceDelegateProvider) {
+            $sceDelegateProvider.resourceUrlWhitelist([
+               'http://c.runoob.com/runoobtest/**'
+            ]);
+        });
+    </script>
+</body>
+</html>

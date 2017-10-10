@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        名字：<input  ng-model="name"/>
+        <p>您输入的是：{{name}}</p>
+        <!--这里的name是绑定这ng-model里面的值的-->
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope) {
+            $scope.name="Alice Wang";  //相当于给myCtrl下面的ng-model属性一个默认值
+        })
+    </script>
+</body>
+</html>

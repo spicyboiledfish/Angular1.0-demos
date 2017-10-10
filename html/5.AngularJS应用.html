@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS应用</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="control">
+        <p>姓名：<input ng-model="name" /></p>
+        <p>年龄：<input ng-model="age" /></p>
+        {{name +" "+age}}
+    </div>
+    <script src="../js/angular.min.js"></script>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("control",function ($scope) {
+            $scope.name="Wang Rui";
+            $scope.age="18";
+        });
+    </script>
+</body>
+</html>

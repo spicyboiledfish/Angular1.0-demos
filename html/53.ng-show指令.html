@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-show指令</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="" ng-init="myShow=12">
+        <button ng-show="myShow<13">按钮</button>
+        <p ng-show="true">我是可见的。</p>
+        <p ng-show="false">我是不可见的。</p>
+    </div>
+</body>
+</html>

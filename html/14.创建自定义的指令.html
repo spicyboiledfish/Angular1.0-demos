@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建自定义的指令</title>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+    	<runoob-directive></runoob-directive>
+    	<div runoob-directive></div>
+    	<div class="runoob-directive"></div>
+    	<!-- directive: runoob-directive -->
+    	<script>
+    		var app=angular.module('myApp',[]);
+    		app.directive("runoobDirective",function(){
+    			return{
+    				restrict : "M",
+    				replace:true,
+    				template:"<h1>自定义指令！</h1>"
+    			};
+    		});
+    	</script>
+    </div>
+       
+</body>
+</html>

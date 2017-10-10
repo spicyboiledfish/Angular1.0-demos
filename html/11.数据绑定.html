@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定</title>
+</head>
+<body>
+    <div ng-app="" ng-init="left=10;right=5">
+        <p>单价为：<input ng-model="left" /></p>
+        <p>数量为：<input ng-model="right" /></p>
+        <p>总价格是：{{left*right}}</p>
+    </div>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$interval服务</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>现在的时间是：</p>
+        <div>{{theTime}}</div>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope,$interval) {
+            $scope.theTime=new Date().toLocaleTimeString(); //初始化当前时间
+            $interval(function () {
+                $scope.theTime=new Date().toLocaleTimeString();
+            },1000);
+        })
+    </script>
+</body>
+</html>

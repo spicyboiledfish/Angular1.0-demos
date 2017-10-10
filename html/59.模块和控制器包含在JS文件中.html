@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块和控制器包含在JS文件中</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <input type="text" ng-model="firstName"/>
+        <input type="text" ng-model="lastName"/>
+        <p>{{firstName+" "+lastName}}</p>
+    </div>
+    <script src="../js/myApp.js"></script>
+    <script src="../js/myCtrl.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$http服务</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        欢迎信息：
+        <p>{{myWelcome}}</p>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope,$http) {
+            $http.get("welcome.html").then(function (response) {
+                $scope.myWelcome = response.data
+            })
+        })
+    </script>
+</body>
+</html>

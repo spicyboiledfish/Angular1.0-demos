@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$index显示表格序号</title>
+    <script src="../js/angular.min.js"></script>
+    <style>
+        table,th,td{
+            border-collapse: collapse;
+            border: 1px solid grey;
+            padding:5px;
+        }
+        table tr:nth-child(odd){
+            background: #f1f1f1;
+        }
+        table tr:nth-child(even){
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <table>
+            <tr ng-repeat="x in names">
+                <td>{{$index+1}}</td>
+                <td style="width:200px;">{{x.Name}}</td>
+                <td>{{x.Country}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope,$http){
+            $http.get("../php/country.php").success(function (response) {
+                $scope.names=response.countries;
+            })
+        })
+    </script>
+</body>
+</html>

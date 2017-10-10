@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加指令</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <root-direactive></root-direactive>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.directive("rootDireactive",function () {
+            return{
+                template:'祝大家新年新气象，生活幸福安康，事业蒸蒸日上，一年更比一年旺！'
+            }
+        })
+    </script>
+</body>
+</html>

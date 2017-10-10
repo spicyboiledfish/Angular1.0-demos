@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$odd和$even</title>
+    <script src="../js/angular.min.js"></script>
+    <style>
+        table,tr,td{
+            border-collapse: collapse;
+            border:1px solid grey;
+            padding:5px;
+        }
+        td{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <table>
+            <tr ng-repeat="x in names">
+                <td ng-if="$odd">{{x.Name}}</td>
+                <td ng-if="$even" style="background-color: #f1f1f1;">{{x.Name}}</td>
+                <td ng-if="$odd">{{x.Country}}</td>
+                <td ng-if="$even" style="background-color: #f1f1f1;">{{x.Country}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope,$http) {
+            $http.get("../php/country.php").success(function (response) {
+                $scope.names=response.countries;
+            })
+        })
+    </script>
+</body>
+</html>

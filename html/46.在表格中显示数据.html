@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在表格中显示数据</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <table>
+            <tr ng-repeat="x in names">
+                <td>{{x.Name}}</td>
+                <td>{{x.Country}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($http,$scope) {
+            $http.get("../php/country.php").success(function (response) {
+                $scope.names=response.countries;
+            })
+        })
+    </script>
+</body>
+</html>

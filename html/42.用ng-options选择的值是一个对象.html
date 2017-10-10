@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用ng-options选择的值是一个对象</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <select ng-model="selectedSites" ng-options="x.site for x in sites">
+
+        </select>
+        <p>您选择的是：{{selectedSites.site}}</p>
+        <p>网址为：{{selectedSites.url}}</p>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope){
+            $scope.sites=[
+                {site : "Google", url : "http://www.google.com"},
+                {site : "Runoob", url : "http://www.runoob.com"},
+                {site : "Taobao", url : "http://www.taobao.com"}
+            ]
+        })
+    </script>
+</body>
+</html>

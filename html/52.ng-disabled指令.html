@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-disabled指令</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="" ng-init="mySwitch=true">
+        <button ng-disabled="mySwitch" onclick="alert(1)">点我！！！</button> <br/>
+        <input type="checkbox" ng-model="mySwitch"/>按钮
+        <p>{{mySwitch}}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器中使用自定义服务</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <p>在过滤器中使用自定义服务，让数字转换为十六进制</p>
+        <div>{{255 | myFilter}}</div>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.service("test",function () {
+            this.myFunc=function (x) {
+                return x.toString(16);
+            }
+        });
+        app.filter("myFilter",["test",function(test){
+            return function (x) {
+                return test.myFunc(x)
+            }
+        }])
+    </script>
+</body>
+</html>

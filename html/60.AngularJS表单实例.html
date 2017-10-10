@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS表单实例</title>
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <form novalidate>
+            First Name:<br />
+            <input type="text" ng-model="user.firstName" /><br />
+            Last Name:<br />
+            <input type="text" ng-model="user.lastName" />
+            <br /><br />
+            <button ng-click="reset()">RESET</button>
+        </form>
+        <p>form={{user}}</p>
+        <p>master={{master}}</p>
+    </div>
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myCtrl",function ($scope) {
+            $scope.master={
+                firstName:'John',
+                lastName:'Doe'
+            };
+            $scope.reset=function (){
+                $scope.user = angular.copy($scope.master);  //定义reset函数，将master的初始化值进行拷贝后直接赋值成user变量
+            };
+            $scope.reset();  //初始化就执行reset函数，让user的firstName和lastName回归到John和Doe.
+        })
+    </script>
+</body>
+</html>
